@@ -1,0 +1,4 @@
+app/globals.css
+app/layout.tsx
+app/page.tsx
+postcss.config.mjs
