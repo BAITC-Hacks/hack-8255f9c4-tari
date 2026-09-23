@@ -1,0 +1,7 @@
+app/api/analyze/route.ts
+app/api/config/route.ts
+app/api/demo/route.ts
+lib/ai/analyze.ts
+lib/ai/provider.ts
+scripts/api-smoke.mjs
+tests/provider.test.ts
