@@ -11,4 +11,4 @@ export type Finding = z.infer<typeof findingSchema>;
 export type Side = 'before'|'after';
 export interface Source { id:string;side:Side;document:string;version:string;section:string;clause:string;page:number|null;text:string }
 export interface ParsedDocument { name:string;version:string;pages:number|null;sources:Source[];warnings:string[] }
-export interface Report { mode:'demo'|'live';findings:Finding[];sources:Source[];documents:{before:{name:string;version:string;pages:number|null};after:{name:string;version:string;pages:number|null}};warnings:string[];conclusion:string;coverage:string;createdAt:string }
+export interface Report { quality?:{partial:boolean;unassessedSections:string[];excludedFindings:number}; mode:'demo'|'live';findings:Finding[];sources:Source[];documents:{before:{name:string;version:string;pages:number|null};after:{name:string;version:string;pages:number|null}};warnings:string[];conclusion:string;coverage:string;createdAt:string }

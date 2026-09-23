@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: orglens
+    runtime: node
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm run start:hosted
+    healthCheckPath: /api/config
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: DEMO_MODE
+        value: "true"
+      - key: APP_ACCESS_CODE
+        generateValue: true
+      - key: ANALYSIS_HOURLY_LIMIT
+        value: "3"
+      - key: ASSISTANT_HOURLY_LIMIT
+        value: "30"
